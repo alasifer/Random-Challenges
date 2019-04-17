@@ -1,5 +1,6 @@
 
 '''
+- Problem:
 Given a string A consisting of n characters and a string B consisting of m characters, 
 write a function that will return the number of times A must be stated such that B is a substring of the repeated A. 
 If B can never be a substring, return -1.
@@ -9,7 +10,14 @@ A = ‘abcd’
 B = ‘cdabcdab’
 
 Refrence for the porblem: https://www.geeksforgeeks.org/google-interview-experience-set-7-software-engineering-intern/
+############################################################################################################################
+- Solution approach:
+I created my own version of linked list to iterate over list B and make sure that it can be a substring of list A. 
+Since list A is the origin, I made sure that is circular linked list. During the iteration process I made a counter that
+I can use to know how many times list A is repeated in list B, given that the condition of list B can be substring of list
+A.
 
+Author: Ahmed Alasaifer
 '''
 class Node:
     def __init__(self, item=None):
@@ -93,11 +101,5 @@ def numberOfTimes(listA, listB):
         counter += 1
 
     #result = listA*counter
+
     return counter
-
-
-
-
-
-
-        
